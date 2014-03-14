@@ -32,6 +32,8 @@ else
 	useradd -s /bin/false nginx
 fi
 
+sudo yum install rsync
+
 # Uncomment if want Denyhosts
 # sudo rpm -Uvh http://mirror.metrocast.net/fedora/epel/6/i386/epel-release-6-8.noarch.rpm
 # sudo yum install denyhosts

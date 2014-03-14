@@ -11,10 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    provider.client_id = 'MPSTBhRef74OyiYe4D4C3' 
-    provider.api_key = '45e5cad031e9160e9d62b706ea93dfdb'
+    provider.client_id = 'DIGITALOCEAN_CLIENTID' 
+    provider.api_key = 'DIGITALOCEAN_APIKEY'
 
-    provider.image = "CentOS 6.5 x64"
+    provider.image = "CentOS 6.4 x64"
     provider.region = "New York 2"
     provider.ca_path = "/etc/ssl/certs/ca-certificates.crt"
   end
@@ -34,18 +34,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "./sync", "/vagrant_data"
 
-  config.omnibus.chef_version = :latest
-
-
   config.vm.provision :shell, :path => "./scripts/before/rhel.sh" # Uncomment if RHEL
   # config.vm.provision :shell, :path => "./scripts/before/debian.sh" # Uncomment if Debian
 
   config.vm.provision :shell, :path => "./scripts/before/all.sh"
 
+  config.omnibus.chef_version = :latest
+
   config.vm.provision "chef_solo" do |chef|
      chef.cookbooks_path = "cookbooks"
-     chef.roles_path = "roles"
-     chef.data_bags_path = "data_bags"
+     # chef.roles_path = "roles"
+     # chef.data_bags_path = "data_bags"
 
      chef.add_recipe "yum"
      chef.add_recipe "rsync"
