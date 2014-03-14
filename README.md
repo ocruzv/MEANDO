@@ -36,7 +36,7 @@ Guardamos el archivo Vagrantfile, y comenzamos a hacer la magia. En consola ejec
 ```sh
 $ vagrant plugin install vagrant-digitalocean
 $ vagrant plugin install vagrant-omnibus
-$ vagrant up
+$ vagrant up --provider=digital_ocean
 ```
 
 Posibles Errores
@@ -69,6 +69,14 @@ $ sudo yum install rsync
 
 Una vez que termine de hacer todo lo que tiene que hacer, accedemos a nuestro servidor mediante la IP que DigitalOcean nos proporciona para nuestro droplet en el panel de administración y nos debe mostrar la pantalla por default de Nginx.
 
+===========
+
+Una vez corregidos los posibles errores, volvemos a hacer:
+
+```sh
+$ vagrant up --provider=digital_ocean
+```
+
 SSH
 ======
 
@@ -90,3 +98,17 @@ nano /etc/nginx/sites-available/node.js
 ```
 
 Dentro de nuestro Droplet de DigitalOcean.
+
+Comandos soportados de Vagrant
+======
+
+The provider supports the following Vagrant sub-commands:
+```
+vagrant destroy - Destroys the droplet instance.
+vagrant ssh - Logs into the droplet instance using the configured user account.
+vagrant halt - Powers off the droplet instance.
+vagrant provision - Runs the configured provisioners and rsyncs any specified config.vm.synced_folder.
+vagrant reload - Reboots the droplet instance.
+vagrant rebuild - Destroys the droplet instance and recreates it with the same IP address is was assigned to previously.
+vagrant status - Outputs the status (active, off, not created) for the droplet instance.
+```
