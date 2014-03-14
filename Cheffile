@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'yum',
+	:git => 'http://github.com/opscode-cookbooks/yum'
+
+cookbook 'rsync',
+	:git => 'http://github.com/opscode-cookbooks/rsync'
+
+cookbook 'nginx',
+	:git => 'http://github.com/opscode-cookbooks/nginx'
+
+cookbook 'mongodb',
+	:git => 'http://github.com/edelight/chef-mongodb'
+
+cookbook 'git'
+
+cookbook 'nodejs',
+	:git => 'http://github.com/mdxp/nodejs-cookbook'
+
+cookbook 'nano',
+	:git => 'https://github.com/josephholsten/nano-cookbook'
