@@ -11,8 +11,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    provider.client_id = 'DIGITALOCEAN_CLIENTID' 
-    provider.api_key = 'DIGITALOCEAN_APIKEY'
+    provider.client_id = 'MPSTBhRef74OyiYe4D4C3' 
+    provider.api_key = '45e5cad031e9160e9d62b706ea93dfdb'
 
     provider.image = "CentOS 6.5 x64"
     provider.region = "New York 2"
