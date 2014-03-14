@@ -39,7 +39,10 @@ $ vagrant plugin install vagrant-omnibus
 $ vagrant up
 ```
 
-Si nos marca error, esta puede ser una solución. Sacado desde el Github de @smdahlen/vagrant-digitalocean
+Posibles Errores
+======
+
+Si nos marca error de SSL o RSA, esta puede ser una solución. Sacado desde el Github de @smdahlen/vagrant-digitalocean
 
 ```
 NOTE: If you are using a Mac, you may need to install a CA bundle to enable SSL communication with the Digital Ocean API. It is recommended to first install Homebrew. With Homebrew installed, run the following command to install the bundle:
@@ -49,6 +52,19 @@ $ brew install curl-ca-bundle
 Once the bundle is installed, add the following environment variable to your .bash_profile script and source it:
 
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
+```
+============
+
+Si nos marca error de rsync, lo primero que tenemos que hacer es acceder a nuestra máquina mediante ssh:
+
+```sh
+$ vagrant ssh
+```
+
+Una vez dentro del ssh de nuestro droplet, instalamos rsync:
+
+```sh
+$ sudo yum install rsync
 ```
 
 Una vez que termine de hacer todo lo que tiene que hacer, accedemos a nuestro servidor mediante la IP que DigitalOcean nos proporciona para nuestro droplet en el panel de administración y nos debe mostrar la pantalla por default de Nginx.
