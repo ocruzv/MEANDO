@@ -74,4 +74,3 @@ nano /etc/nginx/sites-available/node.js
 ```
 
 Dentro de nuestro Droplet de DigitalOcean.
->>>>>>> b806a8b... Readme Updated
