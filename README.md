@@ -2,10 +2,6 @@ MEANDO
 ======
 
 MEAN Stack on Digital Ocean with Vagrant. MEANDO
-<<<<<<< HEAD
-=======
-
-======
 
 OK, primero lo describiré en español y después, si veo que le interesa a la gente lo traduciré al Inglés.
 
