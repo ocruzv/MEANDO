@@ -67,7 +67,11 @@ Una vez dentro del ssh de nuestro droplet, instalamos rsync:
 $ sudo yum install rsync
 ```
 
-Una vez que termine de hacer todo lo que tiene que hacer, accedemos a nuestro servidor mediante la IP que DigitalOcean nos proporciona para nuestro droplet en el panel de administración y nos debe mostrar la pantalla por default de Nginx.
+Para salirnos del ssh simplemente ejecutamos:
+
+```sh
+$ exit
+```
 
 ===========
 
@@ -77,6 +81,14 @@ Una vez corregidos los posibles errores, volvemos a hacer:
 $ vagrant up --provider=digital_ocean
 ```
 
+Si aún así, cuando accedemos a nuestra IP no nos aparece la página por defecto de nginx, ejecutamos lo siguiente:
+
+```sh
+$ vagrant provision
+```
+
+Una vez que termine de hacer todo lo que tiene que hacer, accedemos a nuestro servidor mediante la IP que DigitalOcean nos proporciona para nuestro droplet en el panel de administración y nos debe mostrar la pantalla por default de Nginx.
+
 SSH
 ======
 
@@ -84,6 +96,12 @@ Para acceder por ssh a nuestro servidor, simplemente ejecutamos:
 
 ```sh
 vagrant ssh
+```
+
+Para salirnos del ssh simplemente ejecutamos:
+
+```sh
+$ exit
 ```
 
 Node.JS
