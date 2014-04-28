@@ -53,6 +53,14 @@ Once the bundle is installed, add the following environment variable to your .ba
 
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 ```
+
+Si no tenemos Mac, entonces nuestro error puede ser que no tenemos claves SSL creadas, lo creamos desde linux con el siguiente comando estando en la carpeta ~/.ssh:
+
+```sh
+$ ssh-keygen -t rsa -C "your@email.com"
+```
+
+Y siguen las instrucciones que aparezcan en pantalla
 ============
 
 Si nos marca error de rsync, lo primero que tenemos que hacer es acceder a nuestra máquina mediante ssh:

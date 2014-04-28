@@ -24,4 +24,4 @@ if [ ! -d /var/www/example.com/public_html ]; then
 	</html>' > /var/www/example.com/public_html/index.html;
 fi
 
-
+sudo yum update

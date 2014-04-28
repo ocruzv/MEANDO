@@ -23,6 +23,16 @@ else
 	echo "Repositorio de MongoDB ya agregado anteriormente";
 fi
 
+if [ ! -f /etc/yum.repos.d/nginx.repo ];
+then
+	echo '[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=0
+enabled=1' > /etc/yum.repos.d/nginx.repo
+	exit 0;
+fi
+
 ret=false
 getent passwd nginx >/dev/null 2>&1 && ret=true
 
